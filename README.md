@@ -23,5 +23,9 @@ Return to zero proved out to be a nice alternative or say a solution to NRZ draw
 We can say that Manchester encoding is a combination of RZ and NRZ-L. here, instead of using three values of voltages we use only two, here logical 1 is represented in two halves, the first half consists of a negative voltage and the second-half is represented as positive voltage, and logical 0 is also represented in two halves, the first half consists of a positive voltage and the second-half is represented as negative voltage. The transition in the middle of the bit provides synchronization.
 
 ## About The code
-The code is entirely built using C programming language using various looping structures from scratch providing for any kind of 8 bit value the various schemes encoded output will be shown.
-This was an assignment for us and we decided to make out our own code from it resulting in such a exclusive code with just logics and loopings/decision statements.
+The code is entirely built using C programming language using various looping structures from scratch providing for any kind of 8 bit value the various schemes encoded output will be shown. This was an assignment for us and we decided to make out our own code from it resulting in such a exclusive code with just logics and loopings/decision statements.
+
+## Sample Input and Output
+![Input](In.png)
+
+![Output](Out.png)
