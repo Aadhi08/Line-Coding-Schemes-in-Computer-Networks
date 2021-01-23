@@ -1,13 +1,14 @@
-## Line coding schemes in Computer Networks
-# THEORY
+# Line coding schemes in Computer Networks
+## THEORY
 Line coding refers to the process of converting digital data into digital signals. Whenever we transmit data it is in the form of digital signals, so with the help of line coding, we can convert a sequence to bits (or encoding) into a digital signal which then again converted into bits by the receiver (or can be said as decoded by the receiver). For all this to happen we need line coding schemes which could also be able to avoid overlapping and distortion of signals.
 Characteristics of line coding schemes:
-1.Less complexity.
-2.Should have noise and interference tolerance.
-3.No DC component (or say low-frequency component) should be there because it can't be transferred to larger distances.
-4.Least baseline wandering should be there (baseline wander: low-frequency noise having nonlinear and non-stationary nature).
-5.Should have error detection capability.
-6.Should be self-synchronized.
+*Less complexity.
+*Should have noise and interference tolerance.
+*No DC component (or say low-frequency component) should be there because it can't be transferred to larger distances.
+*Least baseline wandering should be there (baseline wander: low-frequency noise having nonlinear and non-stationary nature).
+*Should have error detection capability.
+*Should be self-synchronized.
+
 Three types of line coding schemes:
 1.	Unipolar
 2.	Polar
@@ -21,6 +22,6 @@ Return to zero proved out to be a nice alternative or say a solution to NRZ draw
 
 We can say that Manchester encoding is a combination of RZ and NRZ-L. here, instead of using three values of voltages we use only two, here logical 1 is represented in two halves, the first half consists of a negative voltage and the second-half is represented as positive voltage, and logical 0 is also represented in two halves, the first half consists of a positive voltage and the second-half is represented as negative voltage. The transition in the middle of the bit provides synchronization.
 
-# About The code
+## About The code
 The code is entirely built using C programming language using various looping structures from scratch providing for any kind of 8 bit value the various schemes encoded output will be shown.
 This was an assignment for us and we decided to make out our own code from it resulting in such a exclusive code with just logics and loopings/decision statements.
