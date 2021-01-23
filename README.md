@@ -2,12 +2,12 @@
 ## THEORY
 Line coding refers to the process of converting digital data into digital signals. Whenever we transmit data it is in the form of digital signals, so with the help of line coding, we can convert a sequence to bits (or encoding) into a digital signal which then again converted into bits by the receiver (or can be said as decoded by the receiver). For all this to happen we need line coding schemes which could also be able to avoid overlapping and distortion of signals.
 Characteristics of line coding schemes:
-*Less complexity.
-*Should have noise and interference tolerance.
-*No DC component (or say low-frequency component) should be there because it can't be transferred to larger distances.
-*Least baseline wandering should be there (baseline wander: low-frequency noise having nonlinear and non-stationary nature).
-*Should have error detection capability.
-*Should be self-synchronized.
+* Less complexity.
+* Should have noise and interference tolerance.
+* No DC component (or say low-frequency component) should be there because it can't be transferred to larger distances.
+* Least baseline wandering should be there (baseline wander: low-frequency noise having nonlinear and non-stationary nature).
+* Should have error detection capability.
+* Should be self-synchronized.
 
 Three types of line coding schemes:
 1.	Unipolar
