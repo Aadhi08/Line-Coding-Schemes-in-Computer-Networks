@@ -1,15 +1,18 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main()
 {
    int i,j,i1,j1,i2,j2,clk=1;
-   int bits[8];
-   printf("\n Enter the byte to be encoded:");
-   for(int i=0;i<=7;i++)
+   int n=0;
+   int bits[1000];
+   printf("\n Enter the number of bits to be encoded:");
+   scanf("%d",&n);
+   printf("\n Enter the pattern to be encoded:");
+   for(i=0;i<=n-1;i++)
    {
        scanf("%d",&bits[i]);
    }
-   
+
    printf("\n Clock\n");
    for(j=0;j<=1;j++)
    {
@@ -21,7 +24,7 @@ int main()
         {
             printf(" ");
         }
-        for(i=0;i<=15;i++)
+        for(i=0;i<=((n*2)-1);i++)
         {
           if(((clk && !j)) ||(!clk && j))
           {
@@ -55,7 +58,7 @@ int main()
         {
             printf(" ");
         }
-        for(i=0;i<=7;i++)
+        for(i=0;i<=n-1;i++)
         {
             if(((bits[i] && !j)) ||(!bits[i] && j))
             {
@@ -90,7 +93,7 @@ int main()
                     }
                 }
             }
-            if(!(bits[i]==bits[(i%7)+1]))
+            if(!(bits[i]==bits[(i%(n-1))+1]))
             {
                 if(j)
                 {
@@ -116,7 +119,7 @@ int main()
         {
             printf(" ");
         }
-        for(i1=0;i1<=7;i1++)
+        for(i1=0;i1<=n-1;i1++)
         {
             if((bits[i1] && j1==2) ||(!bits[i1] && j1==0))
             {
@@ -159,7 +162,7 @@ int main()
                     }
                 }
             }
-            if(!(bits[i1]==bits[(i1%7)+1]))
+            if(!(bits[i1]==bits[(i1%(n-1))+1]))
             {
                 if(j1)
                 {
@@ -177,16 +180,16 @@ int main()
     for(j=0;j<=2;j++)
     {
         int temp=0;//indicator of voltage changes
-        for(i=0;i<=7;i++)
+        for(i=0;i<=n-1;i++)
         {
-            if(!bits[(i%7)-1] && !bits[i])//00 pair
+            if(!bits[(i%(n-1))-1] && !bits[i])//00 pair
             {
                 if(temp)//vcc
                 {
                     if(!j)
                     {
                         printf("______");
-                        
+
                     }
                     else
                     {
@@ -198,7 +201,7 @@ int main()
                     if(j==2)
                     {
                         printf("______");
-                  
+
                     }
                     else
                     {
@@ -206,7 +209,7 @@ int main()
                     }
                 }
             }
-            else if(!bits[(i%7)-1] && bits[i])//0 to 1 change
+            else if(!bits[(i%(n-1))-1] && bits[i])//0 to 1 change
             {
                 if(j)
                     {
@@ -221,7 +224,7 @@ int main()
                     if(j==2)
                     {
                         printf("_____");
-                        
+
                     }
                     else
                     {
@@ -233,7 +236,7 @@ int main()
                     if(!j)
                     {
                         printf("_____");
-                       
+
                     }
                     else
                     {
@@ -241,16 +244,16 @@ int main()
                     }
                 }
                 temp=!temp;
-                
+
             }
-            else if(bits[(i%7)-1] && !bits[i])
+            else if(bits[(i%(n-1))-1] && !bits[i])
             {
                 if(temp)
                 {
                     if(!j)
                     {
                         printf("______");
-                        
+
                     }
                     else
                     {
@@ -262,16 +265,16 @@ int main()
                     if(j==2)
                     {
                         printf("______");
-                        
+
                     }
                     else
                     {
                         printf("      ");
                     }
                 }
-                
+
             }
-            else if(bits[(i%7)-1] && bits[i])//1 to 1 change
+            else if(bits[(i%(n-1))-1] && bits[i])//1 to 1 change
             {
                 if(j)
                     {
@@ -286,7 +289,7 @@ int main()
                     if(j==2)
                     {
                         printf("_____");
-                        
+
                     }
                     else
                     {
@@ -298,7 +301,7 @@ int main()
                     if(!j)
                     {
                         printf("_____");//instead of 5 _ ,6 _ is used
-                        
+
                     }
                     else
                     {
@@ -306,17 +309,17 @@ int main()
                     }
                 }
                 temp=!temp;
-                
+
             }
         }
         printf("\n");
     }
-    
-    printf("\n RZ");
+
+    printf("\n RZ Scheme");
     printf("\n");
     for(j=0;j<=2;j++)
     {
-       for(i=0;i<=15;i++)
+       for(i=0;i<=((n*2)-1);i++)
         {
             if(clk)// for trailing edge the bit is grounded
             {
@@ -402,7 +405,7 @@ int main()
         {
             printf(" ");
         }
-        for(i2=0;i2<=7;i2++)
+        for(i2=0;i2<=n-1;i2++)
         {
             if(bits[i2])
             {
@@ -456,8 +459,8 @@ int main()
                     printf("  ");
                 }
             }
-            if(bits[i2]==bits[(i2%7)+1])
-            {   
+            if(bits[i2]==bits[(i2%(n-1))+1])
+            {
                 if(j2)
                 {
                     printf("|");
@@ -467,7 +470,7 @@ int main()
                     printf(" ");
                 }
             }
-            else if(bits[i2]-bits[(i2%7)+1]==-1)
+            else if(bits[i2]-bits[(i2%(n-1))+1]==-1)
             {
                 if(j2==2)
                 {
@@ -503,7 +506,7 @@ int main()
         {
             printf(" ");
         }
-        for(i2=0;i2<=7;i2++)
+        for(i2=0;i2<=(n-1);i2++)
         {
             if(!bits[i2])
             {
@@ -557,8 +560,8 @@ int main()
                     printf("  ");
                 }
             }
-            if(bits[i2]==bits[(i2%7)+1])
-            {   
+            if(bits[i2]==bits[(i2%(n-1))+1])
+            {
                 if(j2)
                 {
                     printf("|");
@@ -568,7 +571,7 @@ int main()
                     printf(" ");
                 }
             }
-            else if(bits[i2]-bits[(i2%7)+1]==1)
+            else if(bits[i2]-bits[(i2%(n-1))+1]==1)
             {
                 if(j2==2)
                 {
@@ -593,6 +596,6 @@ int main()
         }
         printf("\n");
     }
-    
+
     return 0;
 }
